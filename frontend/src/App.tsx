@@ -1,20 +1,23 @@
 import "./App.css";
-import { ConnectedAs } from "./components/ConnectedAs/connectedAs";
 import { CenterContainer } from "./components/layout/CenterContainer";
 import { Topbar } from "./components/Topbar";
+import { UserMini } from "./components/UserMini";
+import { UserBalanceProvider } from "./providers/BalanceProvider";
 import { SolanaConnectionProvider } from "./providers/SolanaConnectionProvider";
 
 function App() {
   return (
     <SolanaConnectionProvider>
-      <>
-        <Topbar />
-        <CenterContainer>
-          <div className="my-4">
-            <ConnectedAs />
-          </div>
-        </CenterContainer>
-      </>
+      <UserBalanceProvider>
+        <>
+          <Topbar />
+          <CenterContainer>
+            <div className="my-4">
+              <UserMini />
+            </div>
+          </CenterContainer>
+        </>
+      </UserBalanceProvider>
     </SolanaConnectionProvider>
   );
 }
