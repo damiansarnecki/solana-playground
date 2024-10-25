@@ -1,25 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { ConnectedAs } from "./components/ConnectedAs/connectedAs";
+import { CenterContainer } from "./components/layout/CenterContainer";
+import { Topbar } from "./components/Topbar";
+import { SolanaConnectionProvider } from "./providers/SolanaConnectionProvider";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <SolanaConnectionProvider>
+      <>
+        <Topbar />
+        <CenterContainer>
+          <div className="my-4">
+            <ConnectedAs />
+          </div>
+        </CenterContainer>
+      </>
+    </SolanaConnectionProvider>
   );
 }
 

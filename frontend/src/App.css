@@ -1,5 +1,10 @@
-.App {
-  text-align: center;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+  background: #121212;
+  color: white;
 }
 
 .App-logo {
